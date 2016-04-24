@@ -1,0 +1,14 @@
+.answer-item {
+  cursor: pointer;
+}
+
+.answer-item:hover {
+  background-color: lightblue;
+}
+
+.feedback {
+  color: red;
+  width: 100px;
+  height: 50px;
+  border: 1px solid black;
+}
