@@ -188,8 +188,8 @@ var VIEW = {
    *   Reset background color of all answers, set user selected answer to red and display feedback
    */
   wrongAnswer: function(index){
-    $('.answer-item').css('background-color', '#fff');
-    $('#answer-item-' + index).css('background-color', '#f00');
+    $('.answer-item').removeClass('wrong-selected');
+    $('#answer-item-' + index).addClass('wrong-selected');
     $('.feedback').text('Sorry, try again.');
   }
   
