@@ -117,7 +117,7 @@ var GAME = {
    *   Returns true/false comparing current question correct answer vs. user selected answer
    */
   checkAnswer(qIndex, aIndex){
-    return QUESTIONS[qIndex].correctAnswer == aIndex;
+    return QUESTIONS[qIndex].correctAnswer === aIndex;
   },
   
   /**
@@ -207,8 +207,14 @@ $(function(){
   });  
   
   $('#app').on('click', '.answer-item', function(e){
-    var answerIndex = e.target.id.slice(-1);
-    var userGuessCorrect = GAME.checkAnswer(GAME.currentQuestion, e.target.id.slice(-1))
+
+    // e.target is the element clicked;
+    // id is the attribute from the element; 
+    // slice(-1) takes the last character from the string (the index number)
+    // parseInt converts the result into an integer
+    var answerIndex = parseInt(e.target.id.slice(-1));
+
+    var userGuessCorrect = GAME.checkAnswer(GAME.currentQuestion, answerIndex);
     
     if (userGuessCorrect) {
       VIEW.displayAnswer(GAME.currentQuestion);
