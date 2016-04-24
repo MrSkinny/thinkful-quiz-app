@@ -67,10 +67,13 @@ var TEMPLATES = {
     html += "<div class='answer-text'>";
     html +=   "<p>You answered: <strong>" + answer +"</strong></p>";
     html +=   "<p>" + question.correctAnswerText + "</p>";
+    
     if ( GAME.currentQuestion !== (QUESTIONS.length - 1) ) {
-      // Display button if not last question
       html +=   "<button id='next-question'>Next Question</button>";
+    } else {
+      html +=   "<button id='start-quiz'>New Game</button>";  
     }
+    
     html += "</div>";
         
     return html;
